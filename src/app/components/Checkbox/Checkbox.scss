@@ -1,0 +1,24 @@
+@import '../../../sass/variables';
+
+.form-check--custom {
+    display: flex;
+    align-items: center;
+
+    &__input[type=checkbox] {
+        border-radius: 4px;
+        width: 24px;
+        height: 24px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &:checked {
+            background-color: $main !important;
+            border-color: $main;
+        }
+
+        &::after {
+            margin-left: 0 !important;
+        }
+    }
+}
