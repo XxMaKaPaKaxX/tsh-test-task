@@ -1,0 +1,45 @@
+@import '../../../sass/variables';
+
+.custom-btn {
+    padding: 11px 24px;
+    background-color: $main;
+    border: none;
+    border-radius: 4px;
+
+    color: $white;
+    font-weight: 600;
+    transition: .2s;
+
+    &:hover {
+        background-color: $secondry;
+    }
+
+    &--outline {
+        background-color: $white;
+        border: 1px solid $main;
+        color: $main;
+
+        &:hover {
+            background-color: $white;
+            border: 1px solid $secondry;
+            color: $secondry;
+        }
+    }
+}
+
+.disabled-btn {
+    padding: 11px 24px;
+    background-color: $grey-dark;
+    border: none;
+    border-radius: 4px;
+
+    color: $white;
+    font-weight: 600;
+
+    &--outline {
+        background-color: $white;
+        color: $grey-dark;
+        border: 1px solid $grey-dark;
+
+    }
+}
