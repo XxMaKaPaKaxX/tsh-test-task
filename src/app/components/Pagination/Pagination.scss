@@ -1,0 +1,16 @@
+@import '../../../sass/variables';
+
+.pagination {
+    &__item {
+        cursor: pointer;
+
+        &--current-page {
+            color: $main;
+        }
+
+        &--disable {
+            color: $grey-dark;
+            cursor: default;
+        }
+    }
+}
