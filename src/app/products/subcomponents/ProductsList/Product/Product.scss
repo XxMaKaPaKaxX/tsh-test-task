@@ -1,0 +1,32 @@
+@import '../../../../../sass/variables';
+
+.card {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+
+    & .card-title {
+        font-size: 18px;
+    }
+
+    & .card-text {
+        color: $grey-dark;
+    }
+
+    &__promo-label {
+        position: absolute;
+        top: 10%;
+        left: 0;
+        width: 75px;
+        height: 24px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: $gold;
+        color: $white;
+    }
+
+    & .card-img-top--inactive {
+        filter: grayscale(100%);
+    }
+}
