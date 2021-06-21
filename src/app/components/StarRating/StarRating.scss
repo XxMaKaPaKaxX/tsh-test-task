@@ -1,0 +1,17 @@
+@import '../../../sass/variables';
+
+.rating {
+    &__star {
+        width: 13.33px;
+        height: 12.67px;
+        margin-right: 10.67px;
+
+        &--active path {
+            fill: $gold;
+        }
+
+        &--outline path {
+            fill: $grey-dark;
+        }
+    }
+}
