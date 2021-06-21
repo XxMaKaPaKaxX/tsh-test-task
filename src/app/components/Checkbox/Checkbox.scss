@@ -3,14 +3,20 @@
 .form-check--custom {
     display: flex;
     align-items: center;
+    margin-right: 32px;
 
     &__input[type=checkbox] {
-        border-radius: 4px;
+
         width: 24px;
         height: 24px;
         display: flex;
         justify-content: center;
         align-items: center;
+        margin-top: 0;
+
+        border: 1px solid $grey-light;
+        border-radius: 4px;
+
 
         &:checked {
             background-color: $main !important;
