@@ -19,7 +19,7 @@ const StarsRating = ({ maxStars, productRating }) => {
     }
 
     return (
-        <div className='rating'>
+        <div className='rating my-2'>
             {stars}
         </div>
     );

@@ -8,7 +8,7 @@ const ProductsHeader = ({ isActiveRequered, isPromoRequered, searchingQuery, sea
 
     return (
         <header className='products-header '>
-            <div className='products-header__grid-container container-xl pt-5 pb-3'>
+            <div className='products-header__grid-container container-xl pt-5 pt-lg-3 pb-3'>
                 <div className='products-header__logo logo-header'>join.tsh.io</div>
                 <input type="text"
                     className='products-header__searching py-3 my-3'
