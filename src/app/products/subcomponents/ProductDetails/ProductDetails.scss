@@ -1,0 +1,25 @@
+@import '../../../../sass/variables';
+
+.product-details {
+    max-width: 90vw;
+    width: 90vw;
+    max-height: 80vh;
+    overflow: auto;
+
+    &__container {
+        width: 100%;
+    }
+
+    &__img {
+        width: 100%;
+        object-fit: contain;
+    }
+
+    &__description {
+        color: $grey-dark;
+    }
+
+    @media (min-width: $desctop) {
+        width: 40vw;
+    }
+}
