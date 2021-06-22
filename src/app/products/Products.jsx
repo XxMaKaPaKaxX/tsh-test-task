@@ -1,16 +1,26 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import Modal from '../components/Modal/Modal';
+import ProductDetails from './subcomponents/ProductDetails/ProductDetails';
 import ProductsHeader from './subcomponents/ProductsHeader/ProductsHeader';
-
+import ProductsList from './subcomponents/ProductsList/ProductsList.jsx';
 
 export const Products = () => {
   const productsPerPage = 8;
 
-  const [productsData, setProductsData] = useState([]);
+  const [productsData, setProductsData] = useState({});
   const [searchingQuery, setSearchingQuery] = useState('');
   const [isActiveRequered, setIsActiveRequered] = useState(false);
   const [isPromoRequered, setIsPromoRequered] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
 
+  const [isModalShown, setIsModalShown] = useState(false);
+  const [selectedProductData, setSelectedProductData] = useState();
+
+  const closeModal = () => setIsModalShown(false);
+  const showProductModal = (productData) => {
+    setIsModalShown(true);
+    setSelectedProductData(productData);
+  }
 
   const handleOnToggleActive = () => {
     setIsActiveRequered(!isActiveRequered);
@@ -52,6 +62,11 @@ export const Products = () => {
         isPromoRequered={isPromoRequered}
         searchingQuery={searchingQuery}
       />
+      {productsData?.meta?.totalItems && <ProductsList data={productsData} changePage={handleOnChangeCurrentPage} showProductModal={showProductModal} />}
+
+      {isModalShown && <Modal closeModal={closeModal} mustCloseFromOutSide={true}>
+        <ProductDetails data={selectedProductData} />
+      </Modal>}
     </>
   );
 };

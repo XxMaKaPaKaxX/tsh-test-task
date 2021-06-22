@@ -4,7 +4,7 @@ import Button from '../../../../components/Button/Button'
 import StarRating from '../../../../components/StarRating/StarRating';
 import './Product.scss';
 
-const Product = ({ active, description, /* id, */ image, name, promo, rating }) => {
+const Product = ({ active, description, /* id, */ image, name, promo, rating, showProductModal }) => {
 
     return (
         <div className="col">
@@ -21,7 +21,7 @@ const Product = ({ active, description, /* id, */ image, name, promo, rating }) 
                     </p>
                     <div className='d-flex flex-column'>
                         <StarRating maxStars={5} productRating={rating} />
-                        {active ? <Button text='Show details' />
+                        {active ? <Button text='Show details' handleOnClick={() => showProductModal(({ image, description, name }))} />
                             : <Button text='Unavailable' disabled />
                         }
                     </div>
@@ -38,7 +38,8 @@ Product.propTypes = {
     image: PropTypes.string,
     name: PropTypes.string,
     promo: PropTypes.bool,
-    rating: PropTypes.number
+    rating: PropTypes.number,
+    showProductModal: PropTypes.func
 }
 
 export default Product;
