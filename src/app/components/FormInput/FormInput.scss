@@ -1,0 +1,8 @@
+@import '../../../sass/variables';
+
+.login-form__input {
+    background: $white;
+    border: 1px solid $grey-light;
+    box-sizing: border-box;
+    border-radius: 8px;
+}
