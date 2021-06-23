@@ -1,0 +1,29 @@
+@import '../../../../sass/variables';
+
+.form-container {
+    flex-grow: 1;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    & .custom-btn {
+        height: 50px;
+    }
+
+    & .login-form {
+
+        &__title {
+            font-size: 30px;
+        }
+
+        &__loginfaild-message {
+            color: $danger;
+        }
+
+        &__reset-password {
+            text-decoration: underline;
+            color: $grey-dark;
+        }
+    }
+}
