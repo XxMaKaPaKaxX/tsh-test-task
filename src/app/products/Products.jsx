@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
+import EmptyCard from '../components/EmptyCard/EmptyCard';
 import Modal from '../components/Modal/Modal';
 import ProductDetails from './subcomponents/ProductDetails/ProductDetails';
 import ProductsHeader from './subcomponents/ProductsHeader/ProductsHeader';
 import ProductsList from './subcomponents/ProductsList/ProductsList.jsx';
+
 
 export const Products = () => {
   const productsPerPage = 8;
@@ -50,7 +52,8 @@ export const Products = () => {
     fetchData(`https://join-tsh-api-staging.herokuapp.com/products?search=${searchingQuery}&limit=${productsPerPage}&page=${currentPage}${isPromoRequered ? `&promo=true` : ''}${isActiveRequered ? `&active=true` : ''}`);
   }, [searchingQuery, isActiveRequered, isPromoRequered, currentPage]);
 
-  console.log(productsData);
+  console.log(productsData)
+  console.log(!!productsData?.meta?.totalItems);
 
   return (
     <>
@@ -62,7 +65,8 @@ export const Products = () => {
         isPromoRequered={isPromoRequered}
         searchingQuery={searchingQuery}
       />
-      {productsData?.meta?.totalItems && <ProductsList data={productsData} changePage={handleOnChangeCurrentPage} showProductModal={showProductModal} />}
+      {!!productsData?.meta?.totalItems && <ProductsList data={productsData} changePage={handleOnChangeCurrentPage} showProductModal={showProductModal} />}
+      {(productsData?.meta?.totalItems === 0) && <EmptyCard />}
 
       {isModalShown && <Modal closeModal={closeModal} mustCloseFromOutSide={true}>
         <ProductDetails data={selectedProductData} />

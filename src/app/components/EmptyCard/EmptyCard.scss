@@ -1,0 +1,17 @@
+@import '../../../sass/variables';
+
+.empty-card {
+    max-width: 600px;
+    height: 344px;
+
+    background-color: $white;
+    border-radius: 8px;
+
+    &__header {
+        font-size: 18px;
+    }
+
+    &__description {
+        color: $grey-dark;
+    }
+}
