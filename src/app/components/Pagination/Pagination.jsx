@@ -1,7 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './Pagination.scss';
 
-const Pagination = ({ changePage, currentPage, totalPages }) => {
+const Pagination = ({ changePage = Function.prototype, currentPage, totalPages }) => {
 
     const paginationLinks = [];
     if (totalPages > 6) {
@@ -51,12 +52,19 @@ const Pagination = ({ changePage, currentPage, totalPages }) => {
     });
 
     return (
-        <nav className='pagination d-flex justify-content-around justify-content-md-center align-items-center my-4'>
+        <nav className='pagination d-flex justify-content-around justify-content-md-center align-items-center my-4' data-testid='pagination'>
             <p className={`pagination__item ${currentPage === 1 ? 'pagination__item--disable' : ''} mx-1 mx-md-2 my-0`} data-topage={1} onClick={changePage}>First</p>
             {paginationLinksEl}
             <p className={`pagination__item ${currentPage === totalPages ? 'pagination__item--disable' : ''} mx-1 mx-md-2 my-0`} data-topage={totalPages} onClick={changePage}>Last</p>
         </nav>
     );
+}
+
+Pagination.propTypes = {
+    changePage: PropTypes.func,
+    currentPage: PropTypes.number,
+    totalPages: PropTypes.number
+
 }
 
 export default Pagination;
