@@ -1,6 +1,6 @@
 import React from 'react';
 import { ReactComponent as CloseIcon } from '../../../assets/svg/close.svg';
-import './Modal.scss'
+import './Modal.scss';
 
 const Modal = ({ children, closeModal = Function.prototype, mustCloseFromOutSide = true }) => {
 

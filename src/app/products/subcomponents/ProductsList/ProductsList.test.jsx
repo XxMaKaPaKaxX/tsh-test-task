@@ -5,8 +5,6 @@ import { productsData } from '../../../../tests/dataForTesting';
 
 import ProductsList from './ProductsList';
 
-
-
 describe('ProductsList', () => {
     test('Displays products and pagination', () => {
         const { getByTestId } = render(<ProductsList data={productsData} />);

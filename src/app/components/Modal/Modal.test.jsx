@@ -14,5 +14,4 @@ describe('Modal', () => {
         expect(getByText('second child element')).toBeInTheDocument();
         expect(getByTestId('closing-button')).toBeInTheDocument();
     });
-
 });

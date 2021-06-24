@@ -6,10 +6,10 @@ import { Login } from './Login';
 
 describe('Login', () => {
   test('Displays all information', async () => {
-    const { getByRole, getByText } = render(<Login />);
+    const { getByRole, getByText, getByTestId } = render(<Login />);
     expect(getByText('join.tsh.io')).toBeInTheDocument();
     expect(getByRole('main')).toBeInTheDocument();
     expect(getByRole('complementary')).toBeInTheDocument();
-    expect(getByRole('form')).toBeInTheDocument();
+    expect(getByTestId('login-form')).toBeInTheDocument();
   });
 });
