@@ -16,7 +16,7 @@ const UserInfoBar = () => {
 
     if (isUserLogged) {
         return (
-            <div className="user-infobar">
+            <div className="user-infobar" data-testid='user-infobar'>
                 <div className='user-avatar'>
                     <div className='avatar-container' onClick={toggleDropdownVisibility}>
                         <img src='./assets/Oval.png' alt="user-avatar" />
@@ -31,7 +31,7 @@ const UserInfoBar = () => {
         )
     } else {
         return (
-            <div className="user-infobar">
+            <div className="user-infobar" data-testid='user-infobar'>
                 <Button
                     text='Log in'
                     outline
