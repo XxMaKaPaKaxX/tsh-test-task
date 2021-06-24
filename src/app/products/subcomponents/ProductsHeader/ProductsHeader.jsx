@@ -7,7 +7,7 @@ import './ProductsHeader.scss';
 const ProductsHeader = ({ isActiveRequered, isPromoRequered, searchingQuery, searchingChange, toggleActive, togglePromo }) => {
 
     return (
-        <header className='products-header'>
+        <header className='products-header' data-testid='products-header'>
             <div className='products-header__grid-container container-xl pt-5 pt-lg-3 pb-3'>
                 <div className='products-header__logo logo-header'>join.tsh.io</div>
                 <input type="text"

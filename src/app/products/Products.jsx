@@ -5,7 +5,6 @@ import ProductDetails from './subcomponents/ProductDetails/ProductDetails';
 import ProductsHeader from './subcomponents/ProductsHeader/ProductsHeader';
 import ProductsList from './subcomponents/ProductsList/ProductsList.jsx';
 
-
 export const Products = () => {
   const productsPerPage = 8;
 
@@ -22,7 +21,7 @@ export const Products = () => {
   const showProductModal = (productData) => {
     setIsModalShown(true);
     setSelectedProductData(productData);
-  }
+  };
 
   const handleOnToggleActive = () => {
     setIsActiveRequered(!isActiveRequered);
@@ -41,19 +40,14 @@ export const Products = () => {
   };
 
   const fetchData = async (url) => {
-
     const response = await fetch(url);
     const data = await response.json();
     setProductsData(data);
-
-  }
+  };
 
   useEffect(() => {
     fetchData(`https://join-tsh-api-staging.herokuapp.com/products?search=${searchingQuery}&limit=${productsPerPage}&page=${currentPage}${isPromoRequered ? `&promo=true` : ''}${isActiveRequered ? `&active=true` : ''}`);
   }, [searchingQuery, isActiveRequered, isPromoRequered, currentPage]);
-
-  console.log(productsData)
-  console.log(!!productsData?.meta?.totalItems);
 
   return (
     <>

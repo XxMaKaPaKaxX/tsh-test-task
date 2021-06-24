@@ -5,7 +5,7 @@ import './Modal.scss'
 const Modal = ({ children, closeModal = Function.prototype, mustCloseFromOutSide = true }) => {
 
     return (
-        <section className='modalX'>
+        <section className='modalX' data-testid="modal">
             {mustCloseFromOutSide ? <div className="modalX__overlay" onClick={closeModal}></div>
                 : <div className="modalX__overlay"></div>
             }

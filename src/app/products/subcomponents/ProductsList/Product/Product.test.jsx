@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { getAllByTestId, render } from '../../../../../tests/index';
+import { render } from '../../../../../tests/index';
 
 import Product from './Product';
 
