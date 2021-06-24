@@ -4,7 +4,7 @@ import Button from '../../../../components/Button/Button'
 import StarRating from '../../../../components/StarRating/StarRating';
 import './Product.scss';
 
-const Product = ({ active, description, /* id, */ image, name, promo, rating, showProductModal }) => {
+const Product = ({ active, description, image, name, promo, rating, showProductModal }) => {
 
     return (
         <div className="col">
