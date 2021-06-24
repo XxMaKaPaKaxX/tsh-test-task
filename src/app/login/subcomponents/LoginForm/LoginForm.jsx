@@ -64,7 +64,7 @@ const LoginForm = () => {
     }
     return (
         <section className='form-container'>
-            <form className='login-form d-flex flex-column'>
+            <form className='login-form d-flex flex-column' role='form'>
                 <h2 className='login-form__title mb-5'>Login</h2>
                 {loginFailedMessage && <p className='login-form__loginfaild-message'>{loginFailedMessage}</p>}
                 <FormInput type='text' name='username' labelValue='Username' value={username} onChangeFuncton={handleOnUsernameChange} />

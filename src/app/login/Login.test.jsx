@@ -6,11 +6,10 @@ import { Login } from './Login';
 
 describe('Login', () => {
   test('Displays all information', async () => {
-    const { getByText, getByLabelText } = render(<Login />);
-
-    expect(getByText('Products page')).toBeInTheDocument();
-    expect(getByText('Products page')).toBeInTheDocument();
-    expect(getByLabelText('username:')).toBeInTheDocument();
-    expect(getByLabelText('password:')).toBeInTheDocument();
+    const { getByRole, getByText } = render(<Login />);
+    expect(getByText('join.tsh.io')).toBeInTheDocument();
+    expect(getByRole('main')).toBeInTheDocument();
+    expect(getByRole('complementary')).toBeInTheDocument();
+    expect(getByRole('form')).toBeInTheDocument();
   });
 });
